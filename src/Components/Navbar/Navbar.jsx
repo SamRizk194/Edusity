@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 function Navbar() {
   return (
     <nav className="container">
-      <img src={logo} alt="" className="logo" />
+      <img src={logo} alt="logo" className="logo" />
       <ul>
         <li>Home</li>
         <li>Program</li>
