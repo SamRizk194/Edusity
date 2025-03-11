@@ -7,6 +7,31 @@ import location_icon from "../../assets/location-icon.png";
 import white_arrow from "../../assets/white-arrow.png";
 
 function Contact() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "59ea417b-3da2-4157-ae4f-300b792996d5");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <div className="contact">
       <div className="contact-col">
@@ -36,7 +61,7 @@ function Contact() {
       </div>
 
       <div className="contact-col">
-        <form>
+        <form onSubmit={onSubmit}>
           <label>Your name</label>
           <input
             type="text"
@@ -56,7 +81,7 @@ function Contact() {
           <label>Your Email</label>
           <input
             type="email"
-            name="phone"
+            name="email"
             placeholder="Enter your email id"
             required
           ></input>
@@ -73,6 +98,7 @@ function Contact() {
             <img src={white_arrow} alt="arrow" />
           </button>
         </form>
+        <span>{result}</span>
       </div>
     </div>
   );
