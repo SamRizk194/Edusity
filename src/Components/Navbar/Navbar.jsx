@@ -7,15 +7,19 @@ import { Link } from "react-scroll";
 function Navbar() {
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       window.scrollY > 50 ? setSticky(true) : setSticky(false);
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const [mobileMenu, setMobileMenu] = useState(false);
   const toggleMenu = () => {
-    mobileMenu ? setMobileMenu(true) : setMobileMenu(false);
+    setMobileMenu((prev) => !prev);
   };
+
   return (
     <nav className={`container ${sticky ? "dark-nav" : ""}`}>
       <img src={logo} alt="logo" className="logo" />
