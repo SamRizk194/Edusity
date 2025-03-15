@@ -62,36 +62,44 @@ function Contact() {
 
       <div className="contact-col">
         <form onSubmit={onSubmit}>
-          <label>Your name</label>
+          <label htmlFor="name">Your name</label>
           <input
+            id="name"
             type="text"
             name="name"
             placeholder="Enter your name"
             required
+            autoComplete="name"
           ></input>
 
-          <label>Phone Number</label>
+          <label htmlFor="phone">Phone Number</label>
           <input
+            id="phone"
             type="tel"
             name="phone"
             placeholder="Enter your phone number"
             required
+            autoComplete="tel"
           ></input>
 
-          <label>Your Email</label>
+          <label htmlFor="email">Your Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Enter your email id"
             required
+            autoComplete="email"
           ></input>
 
-          <label>Write your messages here</label>
+          <label htmlFor="message">Write your messages here</label>
           <textarea
+            id="message"
             name="message"
             rows="6"
             placeholder="Enter your message"
             required
+            autoComplete="off"
           ></textarea>
           <button type="submit" className="btn dark-btn">
             submit now
