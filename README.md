@@ -1,12 +1,16 @@
-# React + Vite
+# Edusity
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Edusity is a web application built with **React** and developed using **Vite** for fast and efficient development. It features smooth scrolling with **react-scroll** and integrates **Web3Form** for Web3-based form submissions. Custom **CSS** is used for styling the user interface, and **React Hooks** are used for managing state and side effects.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: For building interactive user interfaces.
+- **React Hooks**: For managing state and side effects in functional components.
+- **Vite**: A fast build tool for development and production.
+- **react-scroll**: For smooth scrolling between sections.
+- **Web3Form**: For integrating Web3 form submissions.
+- **CSS**: For custom styling and design of the user interface.
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+You can check out the live demo here: [Edusity Demo](https://sam-edusity.netlify.app/).
